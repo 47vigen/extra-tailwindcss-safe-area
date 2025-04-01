@@ -25,6 +25,7 @@ test("generates all utilities", async (t) => {
 	};
 
 	const css = await generateCSS(config);
+	console.log("🚀 ~ test ~ css:", css)
 
 	t.snapshot(css);
 });
@@ -64,7 +65,7 @@ test("generates offset spacing safe-area utilities", async (t) => {
 	const config = {
 		content: [
 			{
-				raw: "m-safe-offset-1 mx-safe-offset-1 my-safe-offset-1 ms-safe-offset-1 me-safe-offset-1 mt-safe-offset-1 mr-safe-offset-1 mb-safe-offset-1 ml-safe-offset-1 p-safe-offset-1 px-safe-offset-1 py-safe-offset-1 ps-safe-offset-1 pe-safe-offset-1 pt-safe-offset-1 pr-safe-offset-1 pb-safe-offset-1 pl-safe-offset-1",
+				raw: "h-safe-top-offset-1 h-safe-bottom-offset-1 w-safe-left-offset-1 w-safe-right-offset-1 m-safe-offset-1 mx-safe-offset-1 my-safe-offset-1 ms-safe-offset-1 me-safe-offset-1 mt-safe-offset-1 mr-safe-offset-1 mb-safe-offset-1 ml-safe-offset-1 p-safe-offset-1 px-safe-offset-1 py-safe-offset-1 ps-safe-offset-1 pe-safe-offset-1 pt-safe-offset-1 pr-safe-offset-1 pb-safe-offset-1 pl-safe-offset-1",
 			},
 		],
 		theme: {
@@ -74,6 +75,11 @@ test("generates offset spacing safe-area utilities", async (t) => {
 	};
 
 	const css = await generateCSS(config);
+
+	t.true(css.includes(".h-safe-top-offset-1"));
+	t.true(css.includes(".h-safe-bottom-offset-1"));
+	t.true(css.includes(".w-safe-left-offset-1"));
+	t.true(css.includes(".w-safe-right-offset-1"));
 
 	t.true(css.includes(".m-safe-offset-1"));
 	t.true(css.includes(".mx-safe-offset-1"));
@@ -99,7 +105,7 @@ test("generates min spacing safe-area utilities", async (t) => {
 	const config = {
 		content: [
 			{
-				raw: "m-safe-min-1 mx-safe-min-1 my-safe-min-1 ms-safe-min-1 me-safe-min-1 mt-safe-min-1 mr-safe-min-1 mb-safe-min-1 ml-safe-min-1 p-safe-min-1 px-safe-min-1 py-safe-min-1 ps-safe-min-1 pe-safe-min-1 pt-safe-min-1 pr-safe-min-1 pb-safe-min-1 pl-safe-min-1",
+				raw: "h-safe-top-min-1 h-safe-bottom-min-1 w-safe-left-min-1 w-safe-right-min-1 m-safe-min-1 mx-safe-min-1 my-safe-min-1 ms-safe-min-1 me-safe-min-1 mt-safe-min-1 mr-safe-min-1 mb-safe-min-1 ml-safe-min-1 p-safe-min-1 px-safe-min-1 py-safe-min-1 ps-safe-min-1 pe-safe-min-1 pt-safe-min-1 pr-safe-min-1 pb-safe-min-1 pl-safe-min-1",
 			},
 		],
 		theme: {
@@ -109,6 +115,11 @@ test("generates min spacing safe-area utilities", async (t) => {
 	};
 
 	const css = await generateCSS(config);
+
+	t.true(css.includes(".h-safe-top-min-1"));
+	t.true(css.includes(".h-safe-bottom-min-1"));
+	t.true(css.includes(".w-safe-left-min-1"));
+	t.true(css.includes(".w-safe-right-min-1"));
 
 	t.true(css.includes(".m-safe-min-1"));
 	t.true(css.includes(".mx-safe-min-1"));
@@ -134,7 +145,7 @@ test("generates max spacing safe-area utilities", async (t) => {
 	const config = {
 		content: [
 			{
-				raw: "m-safe-max-1 mx-safe-max-1 my-safe-max-1 ms-safe-max-1 me-safe-max-1 mt-safe-max-1 mr-safe-max-1 mb-safe-max-1 ml-safe-max-1 p-safe-max-1 px-safe-max-1 py-safe-max-1 ps-safe-max-1 pe-safe-max-1 pt-safe-max-1 pr-safe-max-1 pb-safe-max-1 pl-safe-max-1",
+				raw: "h-safe-top-max-1 h-safe-bottom-max-1 w-safe-left-max-1 w-safe-right-max-1 m-safe-max-1 mx-safe-max-1 my-safe-max-1 ms-safe-max-1 me-safe-max-1 mt-safe-max-1 mr-safe-max-1 mb-safe-max-1 ml-safe-max-1 p-safe-max-1 px-safe-max-1 py-safe-max-1 ps-safe-max-1 pe-safe-max-1 pt-safe-max-1 pr-safe-max-1 pb-safe-max-1 pl-safe-max-1",
 			},
 		],
 		theme: {
@@ -144,6 +155,11 @@ test("generates max spacing safe-area utilities", async (t) => {
 	};
 
 	const css = await generateCSS(config);
+
+	t.true(css.includes(".h-safe-top-max-1"));
+	t.true(css.includes(".h-safe-bottom-max-1"));
+	t.true(css.includes(".w-safe-left-max-1"));
+	t.true(css.includes(".w-safe-right-max-1"));
 
 	t.true(css.includes(".m-safe-max-1"));
 	t.true(css.includes(".mx-safe-max-1"));
@@ -204,7 +220,7 @@ test("generates height safe-area utilities", async (t) => {
 	const config = {
 		content: [
 			{
-				raw: "min-h-screen-safe max-h-screen-safe h-screen-safe",
+				raw: "min-h-screen-safe max-h-screen-safe h-screen-safe h-safe-top h-safe-bottom",
 			},
 		],
 		theme: {
@@ -218,13 +234,15 @@ test("generates height safe-area utilities", async (t) => {
 	t.true(css.includes(".min-h-screen-safe"));
 	t.true(css.includes(".max-h-screen-safe"));
 	t.true(css.includes(".h-screen-safe"));
+	t.true(css.includes(".h-safe-top"));
+	t.true(css.includes(".h-safe-bottom"));
 });
 
 test("generates width safe-area utilities", async (t) => {
 	const config = {
 		content: [
 			{
-				raw: "min-w-screen-safe max-w-screen-safe w-screen-safe",
+				raw: "min-w-screen-safe max-w-screen-safe w-screen-safe w-safe-left w-safe-right",
 			},
 		],
 		theme: {
@@ -238,6 +256,8 @@ test("generates width safe-area utilities", async (t) => {
 	t.true(css.includes(".min-w-screen-safe"));
 	t.true(css.includes(".max-w-screen-safe"));
 	t.true(css.includes(".w-screen-safe"));
+	t.true(css.includes(".w-safe-left"));
+	t.true(css.includes(".w-safe-right"));
 });
 
 test("generates position safe-area utilities", async (t) => {

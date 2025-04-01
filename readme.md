@@ -55,15 +55,25 @@ Extend base utilities with an additional offset.
 
 This adds right padding equal to the safe area plus `4`.
 
-### Or utilities
+### Max utilities
+
+Apply a maximum value while respecting the safe area.
+
+```html
+<div class="pb-safe-max-8">...</div>
+```
+
+This adds bottom padding equal to the larger of the safe area or `8`.
+
+### Min utilities
 
 Apply a minimum value while respecting the safe area.
 
 ```html
-<div class="pb-safe-or-8">...</div>
+<div class="pb-safe-min-8">...</div>
 ```
 
-This adds bottom padding equal to the larger of the safe area or `8`.
+This adds bottom padding equal to the smaller of the safe area or `8`.
 
 ## Generated styles
 
@@ -169,6 +179,27 @@ Same as [padding](#padding), prefixed with `scroll-`.
 		100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
 	);
 	height: -webkit-fill-available;
+}
+```
+
+### Width
+
+```css
+.min-w-screen-safe {
+	min-width: calc(
+		100vw - (env(safe-area-inset-left) + env(safe-area-inset-right))
+	);
+	min-width: -webkit-fill-available;
+}
+.max-w-screen-safe {
+	max-width: calc(
+		100vw - (env(safe-area-inset-left) + env(safe-area-inset-right))
+	);
+	max-width: -webkit-fill-available;
+}
+.w-screen-safe {
+	width: calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)));
+	width: -webkit-fill-available;
 }
 ```
 
