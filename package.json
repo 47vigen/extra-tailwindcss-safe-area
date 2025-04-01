@@ -1,9 +1,9 @@
 {
-	"name": "viguen-tailwindcss-safe-area",
+	"name": "extra-tailwindcss-safe-area",
 	"version": "0.0.3",
 	"description": "Tailwind CSS safe area helpers",
 	"license": "MIT",
-	"repository": "47vigen/tailwindcss-safe-area",
+	"repository": "47vigen/extra-tailwindcss-safe-area",
 	"funding": "https://github.com/sponsors/47vigen",
 	"types": "index.d.ts",
 	"author": {

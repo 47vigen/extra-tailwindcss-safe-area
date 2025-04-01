@@ -1,4 +1,4 @@
-# viguen-tailwindcss-safe-area
+# extra-tailwindcss-safe-area
 
 Tailwind CSS utilities for safe areas.
 
