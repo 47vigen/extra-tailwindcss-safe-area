@@ -51,6 +51,7 @@ Extend base utilities with an additional offset.
 
 ```html
 <div class="pr-safe-offset-4">...</div>
+<div class="h-safe-bottom-offset-4">...</div>
 ```
 
 This adds right padding equal to the safe area plus `4`.
@@ -61,6 +62,7 @@ Apply a maximum value while respecting the safe area.
 
 ```html
 <div class="pb-safe-max-8">...</div>
+<div class="h-safe-bottom-max-8">...</div>
 ```
 
 This adds bottom padding equal to the larger of the safe area or `8`.
@@ -71,6 +73,7 @@ Apply a minimum value while respecting the safe area.
 
 ```html
 <div class="pb-safe-min-8">...</div>
+<div class="h-safe-bottom-min-8">...</div>
 ```
 
 This adds bottom padding equal to the smaller of the safe area or `8`.
