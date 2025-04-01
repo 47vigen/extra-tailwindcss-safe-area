@@ -1,12 +1,12 @@
-# tailwindcss-safe-area
+# viguen-tailwindcss-safe-area
 
 Tailwind CSS utilities for safe areas.
 
 ## Features
 
-- **Responsive safe area utilities** tailored for margin, padding, height and position
-- **Flexible spacing helpers** to extend safe areas or ensure content remains unobstructed with offset and minimum value variants
-- **Modern CSS support**, including `inline-start`, `inline-end`, `scroll-margin`, `scroll-padding` and more to handle modern layouts
+- **Responsive safe area utilities** tailored for margin, padding, height, width and position
+- **Flexible spacing helpers** to extend safe areas or ensure content remains unobstructed with offset, maximum and minimum value variants
+- **Modern CSS support**, including `height`, `width`, `inline-start`, `inline-end`, `scroll-margin`, `scroll-padding` and more to handle modern layouts
 
 ## Getting started
 
@@ -287,3 +287,7 @@ The height utilities may not always work as expected. Add the following global C
 	}
 }
 ```
+
+## Special Thanks
+
+This package is inspired by the original [tailwindcss-safe-area](https://www.npmjs.com/package/tailwindcss-safe-area) by [mvllow](https://github.com/mvllow). Many thanks to mvllow for their work and contributions to the Tailwind CSS ecosystem.

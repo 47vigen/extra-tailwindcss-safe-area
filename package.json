@@ -1,6 +1,6 @@
 {
 	"name": "viguen-tailwindcss-safe-area",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Tailwind CSS safe area helpers",
 	"license": "MIT",
 	"repository": "47vigen/tailwindcss-safe-area",
@@ -23,6 +23,8 @@
 		"tailwindcss-plugin",
 		"safe-area-inset",
 		"pwa",
+		"height",
+		"width",
 		"margin",
 		"padding"
 	],
