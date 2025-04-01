@@ -180,6 +180,12 @@ Same as [padding](#padding), prefixed with `scroll-`.
 	);
 	height: -webkit-fill-available;
 }
+.h-safe-top {
+	height: env(safe-area-inset-top);
+}
+.h-safe-bottom {
+	height: env(safe-area-inset-bottom);
+}
 ```
 
 ### Width
@@ -200,6 +206,12 @@ Same as [padding](#padding), prefixed with `scroll-`.
 .w-screen-safe {
 	width: calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)));
 	width: -webkit-fill-available;
+}
+.w-safe-left {
+	height: env(safe-area-inset-left);
+}
+.w-safe-right {
+	height: env(safe-area-inset-right);
 }
 ```
 
