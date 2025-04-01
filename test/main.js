@@ -95,11 +95,11 @@ test("generates offset spacing safe-area utilities", async (t) => {
 	t.true(css.includes(".pl-safe-offset-1"));
 });
 
-test("generates or spacing safe-area utilities", async (t) => {
+test("generates min spacing safe-area utilities", async (t) => {
 	const config = {
 		content: [
 			{
-				raw: "m-safe-or-1 mx-safe-or-1 my-safe-or-1 ms-safe-or-1 me-safe-or-1 mt-safe-or-1 mr-safe-or-1 mb-safe-or-1 ml-safe-or-1 p-safe-or-1 px-safe-or-1 py-safe-or-1 ps-safe-or-1 pe-safe-or-1 pt-safe-or-1 pr-safe-or-1 pb-safe-or-1 pl-safe-or-1",
+				raw: "m-safe-min-1 mx-safe-min-1 my-safe-min-1 ms-safe-min-1 me-safe-min-1 mt-safe-min-1 mr-safe-min-1 mb-safe-min-1 ml-safe-min-1 p-safe-min-1 px-safe-min-1 py-safe-min-1 ps-safe-min-1 pe-safe-min-1 pt-safe-min-1 pr-safe-min-1 pb-safe-min-1 pl-safe-min-1",
 			},
 		],
 		theme: {
@@ -110,24 +110,59 @@ test("generates or spacing safe-area utilities", async (t) => {
 
 	const css = await generateCSS(config);
 
-	t.true(css.includes(".m-safe-or-1"));
-	t.true(css.includes(".mx-safe-or-1"));
-	t.true(css.includes(".my-safe-or-1"));
-	t.true(css.includes(".ms-safe-or-1"));
-	t.true(css.includes(".me-safe-or-1"));
-	t.true(css.includes(".mt-safe-or-1"));
-	t.true(css.includes(".mr-safe-or-1"));
-	t.true(css.includes(".mb-safe-or-1"));
-	t.true(css.includes(".ml-safe-or-1"));
-	t.true(css.includes(".p-safe-or-1"));
-	t.true(css.includes(".px-safe-or-1"));
-	t.true(css.includes(".py-safe-or-1"));
-	t.true(css.includes(".ps-safe-or-1"));
-	t.true(css.includes(".pe-safe-or-1"));
-	t.true(css.includes(".pt-safe-or-1"));
-	t.true(css.includes(".pr-safe-or-1"));
-	t.true(css.includes(".pb-safe-or-1"));
-	t.true(css.includes(".pl-safe-or-1"));
+	t.true(css.includes(".m-safe-min-1"));
+	t.true(css.includes(".mx-safe-min-1"));
+	t.true(css.includes(".my-safe-min-1"));
+	t.true(css.includes(".ms-safe-min-1"));
+	t.true(css.includes(".me-safe-min-1"));
+	t.true(css.includes(".mt-safe-min-1"));
+	t.true(css.includes(".mr-safe-min-1"));
+	t.true(css.includes(".mb-safe-min-1"));
+	t.true(css.includes(".ml-safe-min-1"));
+	t.true(css.includes(".p-safe-min-1"));
+	t.true(css.includes(".px-safe-min-1"));
+	t.true(css.includes(".py-safe-min-1"));
+	t.true(css.includes(".ps-safe-min-1"));
+	t.true(css.includes(".pe-safe-min-1"));
+	t.true(css.includes(".pt-safe-min-1"));
+	t.true(css.includes(".pr-safe-min-1"));
+	t.true(css.includes(".pb-safe-min-1"));
+	t.true(css.includes(".pl-safe-min-1"));
+});
+
+test("generates max spacing safe-area utilities", async (t) => {
+	const config = {
+		content: [
+			{
+				raw: "m-safe-max-1 mx-safe-max-1 my-safe-max-1 ms-safe-max-1 me-safe-max-1 mt-safe-max-1 mr-safe-max-1 mb-safe-max-1 ml-safe-max-1 p-safe-max-1 px-safe-max-1 py-safe-max-1 ps-safe-max-1 pe-safe-max-1 pt-safe-max-1 pr-safe-max-1 pb-safe-max-1 pl-safe-max-1",
+			},
+		],
+		theme: {
+			extend: {},
+		},
+		plugins: [safeArea],
+	};
+
+	const css = await generateCSS(config);
+
+	t.true(css.includes(".m-safe-max-1"));
+	t.true(css.includes(".mx-safe-max-1"));
+	t.true(css.includes(".my-safe-max-1"));
+	t.true(css.includes(".ms-safe-max-1"));
+	t.true(css.includes(".me-safe-max-1"));
+	t.true(css.includes(".mt-safe-max-1"));
+	t.true(css.includes(".mr-safe-max-1"));
+	t.true(css.includes(".mb-safe-max-1"));
+	t.true(css.includes(".ml-safe-max-1"));
+	t.true(css.includes(".p-safe-max-1"));
+	t.true(css.includes(".px-safe-max-1"));
+	t.true(css.includes(".py-safe-max-1"));
+	t.true(css.includes(".ps-safe-max-1"));
+	t.true(css.includes(".pe-safe-max-1"));
+	t.true(css.includes(".pt-safe-max-1"));
+	t.true(css.includes(".pr-safe-max-1"));
+	t.true(css.includes(".pb-safe-max-1"));
+	t.true(css.includes(".pl-safe-max-1"));
 });
 
 test("generates scroll spacing safe-area utilities", async (t) => {
@@ -183,6 +218,26 @@ test("generates height safe-area utilities", async (t) => {
 	t.true(css.includes(".min-h-screen-safe"));
 	t.true(css.includes(".max-h-screen-safe"));
 	t.true(css.includes(".h-screen-safe"));
+});
+
+test("generates width safe-area utilities", async (t) => {
+	const config = {
+		content: [
+			{
+				raw: "min-w-screen-safe max-w-screen-safe w-screen-safe",
+			},
+		],
+		theme: {
+			extend: {},
+		},
+		plugins: [safeArea],
+	};
+
+	const css = await generateCSS(config);
+
+	t.true(css.includes(".min-w-screen-safe"));
+	t.true(css.includes(".max-w-screen-safe"));
+	t.true(css.includes(".w-screen-safe"));
 });
 
 test("generates position safe-area utilities", async (t) => {

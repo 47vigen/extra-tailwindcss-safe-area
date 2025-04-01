@@ -244,12 +244,22 @@ const safeArea = plugin(({ addUtilities, matchUtilities, theme }) => {
 		supportsNegativeValues: true,
 	});
 
-	const orUtilities = generateVariantUtilities(
+	const minUtilities = generateVariantUtilities(
 		baseUtilities,
-		"or",
+		"min",
+		(v, x) => `min(${v}, ${x})`,
+	);
+	matchUtilities(minUtilities, {
+		values: theme("spacing"),
+		supportsNegativeValues: true,
+	});
+
+	const maxUtilities = generateVariantUtilities(
+		baseUtilities,
+		"max",
 		(v, x) => `max(${v}, ${x})`,
 	);
-	matchUtilities(orUtilities, {
+	matchUtilities(maxUtilities, {
 		values: theme("spacing"),
 		supportsNegativeValues: true,
 	});
