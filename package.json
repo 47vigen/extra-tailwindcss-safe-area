@@ -3,12 +3,12 @@
 	"version": "0.6.0",
 	"description": "Tailwind CSS safe area helpers",
 	"license": "MIT",
-	"repository": "mvllow/tailwindcss-safe-area",
-	"funding": "https://github.com/sponsors/mvllow",
+	"repository": "47vigen/tailwindcss-safe-area",
+	"funding": "https://github.com/sponsors/47vigen",
 	"types": "index.d.ts",
 	"author": {
-		"name": "mvllow",
-		"email": "mvllow@icloud.com"
+		"name": "47vigen",
+		"email": "47vigen@gmail.com"
 	},
 	"main": "index.js",
 	"scripts": {
